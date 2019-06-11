@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { TodoListItem } from './models';
 
 @Component({
@@ -7,10 +7,10 @@ import { TodoListItem } from './models';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent {
-
+  // Jeff Was Here
   items: TodoListItem[] = [
     { description: 'Mow Grass', completed: false },
-    { description: 'Cleam Gutters', completed: false },
+    { description: 'Clean Gutters', completed: false },
     { description: 'Change Oil', completed: true }
   ];
 
@@ -18,11 +18,11 @@ export class TodoListComponent {
     item.completed = true;
   }
 
-  add(what: HTMLInputElement) {
-    const description = what.value;
+  add(what: string) {
+    const description = what;
     this.items.unshift({ description, completed: false });
-    what.value = '';
-    what.focus();
+
+
   }
 
   clearCompleted() {
